@@ -32,30 +32,14 @@ The Project Management Institute
 
 The following artifacts shall be delivered for each of the required functions (i.e., Deliverables, Tasks, Action Items and Issues).    The delivery schedule for each artifact is specified below along with a description of what is required.
 
-1. User Stories/Requirements – 2
-# nd
- week
-2. High-Level Design:   Recommended delivery – 3
-# rd
- week.
-3. GUI Prototype:  Recommended delivery – 4
-# th
- week.
-4. Detailed Design:  Recommended delivery –5
-# th
- week.
-5. Test Cases:  Recommended delivery – 6
-# th
- week.
-6. Requirements Cross Reference Matrix – 8
-# th
- week.
-7. Code:  Recommended delivery – 9
-# th
- week.
-8. Test Results:   Recommended delivery – 9
-# th
- week.
+1. User Stories/Requirements – 2th week.
+2. High-Level Design:   Recommended delivery – 3th week.
+3. GUI Prototype:  Recommended delivery – 4th week.
+4. Detailed Design:  Recommended delivery –5th week.
+5. Test Cases:  Recommended delivery – 6th week.
+6. Requirements Cross Reference Matrix – 8th week.
+7. Code:  Recommended delivery – 9th week.
+8. Test Results:   Recommended delivery – 9th week.
 
 # Grading
 
