@@ -71,7 +71,7 @@ class Examples extends CI_Controller {
 	public function customers_management()
 	{
 			$crud = new grocery_CRUD();
-
+			$crud->set_theme('datatables');
 			$crud->set_table('customers');
 			$crud->columns('customerName','contactLastName','phone','city','country','salesRepEmployeeNumber','creditLimit');
 			$crud->display_as('salesRepEmployeeNumber','from Employeer')
