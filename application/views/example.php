@@ -1,18 +1,4 @@
 <!DOCTYPE html>
-
-<?php
-	session_start();
-
-	$username = "User Name";
-	$password = "password";
-
-	$_SESSION['logged_in'] = true;
-
-	if(isset($_POST['username']) && isset($_POST['password'])) {
-		$_SESSION['logged_in'] = true;
-	}
-?>
-
 <html>
 <head>
 	<meta charset="utf-8" />
@@ -21,31 +7,66 @@
 foreach($css_files as $file): ?>
 	<link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
 <?php endforeach; ?>
+	<style>
+		body {margin:0;}
+		
+		.topnav {
+  		overflow: hidden;
+  		background-color: #333;
+		}
+
+		.topnav a {
+		  float: left;
+		  color: #f2f2f2;
+  		text-align: center;
+  		padding: 14px 16px;
+  		text-decoration: none;
+  		font-size: 17px;
+		}
+
+		.topnav a:hover {
+  		background-color: #ddd;
+  		color: black;
+		}
+
+		.topnav a.active {
+  		background-color: #999;
+  		color: white;
+		}
+	</style>
 <?php foreach($js_files as $file): ?>
 	<script src="<?php echo $file; ?>"></script>
 <?php endforeach; ?>
 </head>
 <body>
-	<?php if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == false): ?>
-	<form method="post">
-		Username:<br/>
-		<input type="text" name="username"><br/>
-		Password:<br/>
-		<input type="password" name="password"><br/>
-		<input type="submit" value="Login">
-	</form>
-	<?php else: ?>
-	<div>
-		<a href='<?php echo site_url('examples/deliverable_management')?>'>Deliverables</a> |
-		<a href='<?php echo site_url('examples/tasks_management')?>'>Tasks</a> |
-		<a href='<?php echo site_url('examples/issue_management')?>'>Issues</a> |
-		<a href='<?php echo site_url('examples/action_item_management')?>'>Action Items</a> | 
-		<a href='<?php echo site_url('examples/resource_management')?>'>Resources</a>		
+	<div class="topnav">
+		<?php
+    	function theUrl($link) {
+      	$uri = current_url();
+        if($link==$uri) {
+        	return 'class="active"';
+       	}
+    	}
+			
+			$deliverable = site_url('examples/deliverable_management');
+			$task = site_url('examples/tasks_management');
+			$issue = site_url('examples/issue_management');
+			$action_item = site_url('examples/action_item_management');
+			$resource = site_url('examples/resource_management');
+		
+		?>
+		
+		<?php 
+		echo "<a href='".$deliverable."'".theUrl($deliverable).">Deliverables</a>";
+		echo "<a href='".$task."'".theUrl($task).">Tasks</a>";
+		echo "<a href='".$issue."'".theUrl($issue).">Issues</a>";
+		echo "<a href='".$action_item."'".theUrl($action_item).">Action Items</a>";
+		echo "<a href='".$resource."'".theUrl($resource).">Resources</a>";
+		?>
 	</div>
 	<div style='height:20px;'></div>  
     <div>
 		<?php echo $output; ?>
     </div>
-	<?php endif; ?>
 </body>
 </html>
